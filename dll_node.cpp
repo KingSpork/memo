@@ -21,6 +21,10 @@ dll_node* dll_node::getNext(){
     return next;
 }
 
+DataType dll_node::getDataType(){
+    return nodeType;
+}
+
 //Set functions
 void dll_node::setVal(void* v){
     val = v;
@@ -32,4 +36,11 @@ void dll_node::setNext(dll_node* n){
 
 void dll_node::setPrev(dll_node* p){
     prev = p;
+}
+
+void dll_node::setDataType(DataType t){
+    if(isDataTypeSet == false){
+        nodeType = t;
+        isDataTypeSet = true;
+    }
 }

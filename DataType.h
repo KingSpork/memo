@@ -8,9 +8,10 @@ enum DataType{
     FLOAT,
     STRING,
     CHAR,
-    NADA,
+    UNKNOWN,
     OTHER,
     VOIDP,
+    NONE,
 };
 
 #endif // DATATYPE_H_INCLUDED

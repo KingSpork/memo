@@ -1,21 +1,30 @@
 #include "dl_list.h"
 #include "DataType.h"
+#include <iostream>
 
+//Initialize with some existing nodes, or with NULL nodes.
 dl_list::dl_list(dll_node* f, dll_node* l){
     if(f==NULL || l==NULL){
         createBlankList(&current, &first, &last);
     }
     else{
-        current = f;
-        first = f;
-        last = l;
+        DataType dTypeF = f->getDataType();
+        DataType dTypeL = l->getDataType();
+        if(dTypeF == dTypeL){
+            setDataType(dTypeF);
+            current = f;
+            first = f;
+            last = l;
+        }
     }
 }
 
-dl_list::dl_list(void* val1, void* val2){
+//Initialize with some values only.
+dl_list::dl_list(void* val1, void* val2, DataType t){
     createBlankList(&current, &first, &last);
     first->setVal(val1);
     last->setVal(val2);
+    setDataType(t);
 }
 
 
@@ -52,24 +61,39 @@ dll_node* dl_list::getLast(){
     return last;
 }
 
+DataType dl_list::getDataType(){
+    return listType;
+}
+
 void* dl_list::getCurrentValue(){
     void* val = current->getVal();
     return val;
 }
 
 void dl_list::insertAfter(dll_node* i){
-    dll_node* temp = current->getNext();
-    if(temp == first){
-        last = i;
+    if(i->getDataType() == getDataType()){
+        dll_node* temp = current->getNext();
+        if(temp == first){
+            last = i;
+        }
+        //establish link between next and i
+        temp->setPrev(i);
+        i->setNext(temp);
+
+        //establish link between current and i
+        current->setNext(i);
+        i->setPrev(current);
+    }else{
+        using namespace std;
+        std::cout << "Node and List DataTypes don't match!" << endl;
     }
-    //establish link between next and i
-    temp->setPrev(i);
-    i->setNext(temp);
+}
 
-    //establish link between current and i
-    current->setNext(i);
-    i->setPrev(current);
-
+void dl_list::setDataType(DataType t){
+    if(isDataTypeSet == false){
+        listType = t;
+        isDataTypeSet = true;
+    }
 }
 
 void dl_list::setCurrentValue(void* val){

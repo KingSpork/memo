@@ -11,16 +11,19 @@ struct dll_node{
         void* getVal();
         dll_node* getNext();
         dll_node* getPrev();
+        DataType getDataType();
 
         void setVal(void* v);
         void setNext(dll_node* n);
         void setPrev(dll_node* p);
+        void setDataType(DataType t=NONE);
 
     private:
         void* val;
         dll_node *next;
         dll_node *prev;
-        DataType nodeType;
+        bool isDataTypeSet = false;
+        DataType nodeType = NONE;
 };
 
 #endif // DLL_NODE_H

@@ -1,26 +1,27 @@
 # depslib dependency file v1.0
-1369341940 source:c:\users\paul\workspace\memo\dl_list.cpp
+1369351271 source:c:\users\paul\workspace\memo\dl_list.cpp
 	"dl_list.h"
 	"DataType.h"
+	<iostream>
 
-1369337872 c:\users\paul\workspace\memo\dl_list.h
+1369351079 c:\users\paul\workspace\memo\dl_list.h
 	<cstddef>
 	"dll_node.h"
 	"DataType.h"
 
-1369333509 source:c:\users\paul\workspace\memo\dll_node.cpp
+1369350706 source:c:\users\paul\workspace\memo\dll_node.cpp
 	<cstddef>
 	"dll_node.h"
 	"DataType.h"
 
-1369343754 c:\users\paul\workspace\memo\dll_node.h
+1369350756 c:\users\paul\workspace\memo\dll_node.h
 	<cstddef>
 	"DataType.h"
 
-1369343954 source:c:\users\paul\workspace\memo\main.cpp
+1369351175 source:c:\users\paul\workspace\memo\main.cpp
 	<iostream>
 	<string>
 	"dl_list.h"
 
-1369334684 c:\users\paul\workspace\memo\datatype.h
+1369350362 c:\users\paul\workspace\memo\datatype.h
 
