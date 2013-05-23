@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1369332560 source:c:\users\paul\workspace\memo\dl_list.cpp
+	"dl_list.h"
+	"DataType.h"
+
+1369333571 c:\users\paul\workspace\memo\dl_list.h
+	<cstddef>
+	"dll_node.h"
+	"DataType.h"
+
+1369333509 source:c:\users\paul\workspace\memo\dll_node.cpp
+	<cstddef>
+	"dll_node.h"
+	"DataType.h"
+
+1369332559 c:\users\paul\workspace\memo\dll_node.h
+	"DataType.h"
+
+1369332561 source:c:\users\paul\workspace\memo\main.cpp
+	<iostream>
+	<string>
+	"dl_list.h"
+
+1369332441 c:\users\paul\workspace\memo\datatype.h
+
