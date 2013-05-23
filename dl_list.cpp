@@ -1,8 +1,7 @@
 #include "dl_list.h"
 #include "DataType.h"
 
-dl_list::dl_list(dll_node* f, dll_node* l)
-{
+dl_list::dl_list(dll_node* f, dll_node* l){
     if(f==NULL || l==NULL){
         createBlankList(&current, &first, &last);
     }
@@ -11,8 +10,14 @@ dl_list::dl_list(dll_node* f, dll_node* l)
         first = f;
         last = l;
     }
-
 }
+
+dl_list::dl_list(void* val1, void* val2){
+    createBlankList(&current, &first, &last);
+    first->setVal(val1);
+    last->setVal(val2);
+}
+
 
 void dl_list::moveForward(int n){
     for(int i=0; i < n; i++){

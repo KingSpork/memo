@@ -1,11 +1,12 @@
 #ifndef DLL_NODE_H
 #define DLL_NODE_H
+#include <cstddef>
 #include "DataType.h"
 
 
 struct dll_node{
     public:
-        dll_node(void* v, dll_node* p, dll_node* n);
+        dll_node(void* v=NULL, dll_node* p=NULL, dll_node* n=NULL);
 
         void* getVal();
         dll_node* getNext();

@@ -10,8 +10,9 @@ struct dl_list
 {
     public:
         dl_list(dll_node* f=NULL, dll_node* l=NULL);
-        void moveForward(int n);
-        void moveBack(int n);
+        dl_list(void* val1, void* val2);
+        void moveForward(int n=1);
+        void moveBack(int n=1);
         void moveToFirst();
         void moveToLast();
 
